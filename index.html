@@ -1,6 +1,6 @@
 <html>
 <body>
-    <h1>aoc15.1</h1>
+    <h1>aoc15.2</h1>
     <canvas id="Canvas1" width="800" height="800" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -16,6 +16,7 @@ display()
 function display(){
     ct1.font="9px Monospace" 
     len=ins.length
+    alert("len= "+len)
    ct1.clearRect(0,20,800,800)
     for(k=0;k<len;k++){
      ct1.fillText(ins[k]+" = "+t, 0, 25+6*k)
