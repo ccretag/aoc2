@@ -16,15 +16,23 @@ display()
 function display(){
     ct1.font="7px Monospace " 
     len=ins.length
-spl()
+   ct1.clearRect(0,20,800,800)
+    for(k=0;k<len;k++){
+     ct1.fillText(ins[k]+" = "+ spl(ins[k]), 0, 25+6*k)
+   
+    }
   
 }
 
-function spl(){
-    ct1.clearRect(0,20,800,800)
-    for(k=0;k<len;k++){
-     ct1.fillText(ins[k], 0, 25+6*k)
-    }
+function spl(word){
+    var total=0
+ for(j=0; j<word.length;j++){
+   
+     total+=  word.charCodeAt(j)
+     total*=17
+     total=total%256
+ }
+    return total
 }
         
 </script>
