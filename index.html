@@ -1,6 +1,6 @@
 <html>
 <body>
-    aoc6
+    aoc7
     <canvas id="Canvas1" width="900" height="900" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -16,8 +16,9 @@ var ct1 = c1.getContext("2d");
   } catch (error) {
     alert('Error reading file:'+error);
   }
-     alert("lines read "+ins.length)
+     
 ins.pop()
+        alert("lines read "+ins.length)
     }
 var dir=0,m=0
 var okRL=[".","-"], okUD=[".","|"]
@@ -29,7 +30,6 @@ setTimeout(function(){move(0,0,0)},2000)
         
 function move(d,a,b){ 
     m++
-     if (m<5){alert("step "+m)}
     ct1.clearRect(100,0,100,9)
     ct1.fillText(m,100,9)
     if( a<0 || a>=ins[0].length || b<0 || b>=ins.length){return}
