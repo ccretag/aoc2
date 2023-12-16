@@ -1,6 +1,6 @@
 <html>
 <body>
-    aoc4
+    aoc5
     <canvas id="Canvas1" width="1500" height="1500" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -21,7 +21,7 @@ ins.pop()
  start()      
     }
 var dir=0,m=0,sc=8,kill=0
-var okRL=[".","-"], okUD=[".","|"]
+var okRL=[".","-","h"], okUD=[".","|","v"]
 var t=1
 function start(){
 display(0)
@@ -50,11 +50,12 @@ function mov2(d,a,b,kc){
     if(d==0){
         if( okRL.includes(ch) ){ move(0,a+1,b,ac); return}
         else{
+         if(ch=="v"){return}
          if(ch=="/"){ move(3,a,b-1,ac); return}
          if(ch=="\\"){ move(1,a,b+1,ac); return}
          if(ch=="|"){ setTimeout(function(){move(1,a,b+1,ac)},1);
                      setTimeout(function(){move(3,a,b-1,ac)},1);
-                     disp[b][a]="/"
+                     disp[b][a]="v"
                     return}
         }
     }
@@ -63,11 +64,12 @@ function mov2(d,a,b,kc){
         
         if( okUD.includes(ch) ){ move(1,a,b+1,ac); return}
         else{
+            if(ch=="h"){return}
          if(ch=="/"){ move(2,a-1,b,ac); return}
          if(ch=="\\"){ move(0,a+1,b,ac); return}
          if(ch=="-"){ setTimeout(function(){move(0,a+1,b,ac)},1);
                     setTimeout(function(){move(2,a-1,b,ac)},1);
-                    disp[b][a]="/"
+                    disp[b][a]="h"
                      return}
         } 
     }
@@ -75,11 +77,12 @@ function mov2(d,a,b,kc){
      if(d==2){
         if( okRL.includes(ch) ){ move(2,a-1,b,ac); return}
         else{
+            if(ch=="v"){return}
          if(ch=="/"){ move(1,a,b+1,ac); return}
          if(ch=="\\"){ move(3,a,b-1,ac); return}
          if(ch=="|"){ setTimeout(function(){move(1,a,b+1,ac)},1);
                      setTimeout(function(){move(3,a,b-1,ac)},1);
-                     disp[b][a]="/"
+                     disp[b][a]="v"
                      return}
         }
     }
@@ -87,11 +90,12 @@ function mov2(d,a,b,kc){
     if(d==3){
         if( okUD.includes(ch) ){ move(3,a,b-1,ac); return}
         else{
+            if(ch=="h"){return}
          if(ch=="/"){ move(0,a+1,b,ac); return}
          if(ch=="\\"){ move(2,a-1,b,ac); return}
          if(ch=="-"){ setTimeout(function(){move(0,a+1,b,ac)},1);
                     setTimeout(function(){move(2,a-1,b,ac)},1);
-                     disp[b][a]="/"
+                     disp[b][a]="h"
                     return}
         }
     }
