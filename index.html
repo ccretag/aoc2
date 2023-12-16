@@ -125,32 +125,32 @@ var dir=0,m=0
 display()
 var light={x:0,y:0}
     show()
-    setTimeout(move,1000)
-function move(){    
-    if(dir==0){
+    move(0)
+function move(d){    
+    if(d==0){
         if(ins[light.y].charAt(light.x+1)=="."){light.x++}
-        if(ins[light.y].charAt(light.x+1)=="/"){dir=3; light.y--}
-        if(ins[light.y].charAt(light.x+1)=="\\"){dir=1; light.y++}
+        if(ins[light.y].charAt(light.x+1)=="/"){d=3; light.y--}
+        if(ins[light.y].charAt(light.x+1)=="\\"){d=1; light.y++}
     }
-     if(dir==1){
+     if(d==1){
         if(ins[light.y+1].charAt(light.x)=="."){light.y++}
-        if(ins[light.y+1].charAt(light.x)=="/"){dir=2; light.x--}
-        if(ins[light.y+1].charAt(light.x)=="\\"){dir=0; light.x++}
+        if(ins[light.y+1].charAt(light.x)=="/"){d=2; light.x--}
+        if(ins[light.y+1].charAt(light.x)=="\\"){d=0; light.x++}
          
     }
-     if(dir==2){
+     if(d==2){
         if(ins[light.y].charAt(light.x-1)=="."){light.x--}
-        if(ins[light.y].charAt(light.x-1)=="/"){dir=1; light.y--}
-        if(ins[light.y].charAt(light.x-1)=="\\"){dir=3; light.y++}
+        if(ins[light.y].charAt(light.x-1)=="/"){d=1; light.y--}
+        if(ins[light.y].charAt(light.x-1)=="\\"){d=3; light.y++}
     }
-     if(dir==3){
+     if(d==3){
         if(ins[light.y-1].charAt(light.x)=="."){light.y--}
-        if(ins[light.y-1].charAt(light.x)=="/"){dir=0; light.x++}
-        if(ins[light.y+1].charAt(light.x)=="\\"){dir=2; light.x--}
+        if(ins[light.y-1].charAt(light.x)=="/"){d=0; light.x++}
+        if(ins[light.y+1].charAt(light.x)=="\\"){d=2; light.x--}
     }
     show()
     m++
-    if (m<300){setTimeout(move,200)}
+    if (m<300){move(d)}
 }
 
 function show(){    
