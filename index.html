@@ -1,6 +1,6 @@
 <html>
 <body>
-    <h1>aoc16.2</h1>
+    <h1>aoc16.3</h1>
     <canvas id="Canvas1" width="900" height="900" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -125,44 +125,48 @@ var dir=0,m=0
 var okRL=[".","-"], okUD=[".","|"]
     
 display()
-var light={x:0,y:0}
+var n={x:0,y:0}
     show()
     move(0,0,0)
 function move(d,a,b){    
     if(d==0){
-        if(okRight.includes(ins[b].charAt(a+1)==".")){a++}
+        n.x=a+1,n.y=b
+        if(okRight.includes(ins[n.y].charAt(n.x)) ){n.x++}
         else{
-         if(ins[b].charAt(a+1)=="/"){d=3; b--}
-         if(ins[light.b].charAt(a+1)=="\\"){d=1; b++}
+         if(ins[n.y].charAt(n.x)=="/"){d=3; n.y--}
+         if(ins[n.y].charAt(n.x)=="\\"){d=1; n.y++}
         }
     }
     
      if(d==1){
-        if(okUP.includes(ins[b+1].charAt(a)==".")){b++}
+         n.x=a,n.y=b+1
+        if(okUP.includes(ins[n.y].charAt(n.x)) ){n.y++}
         else{
-         if(ins[b+1].charAt(a)=="/"){d=2; a--}
-         if(ins[b+1].charAt(a)=="\\"){d=0; a++}
+         if(ins[n.y].charAt(n.x)=="/"){d=2; n.x--}
+         if(ins[n.y].charAt(n.x)=="\\"){d=0; n.x++}
         } 
     }
     
      if(d==2){
-        if(okRL.includes(ins[b].charAt(a-1)==".")){a--}
+        n.x=a-1,n.y=b
+        if(okRL.includes(ins[n.y].charAt(n.x)) ){n.x--}
         else{
-         if(ins[b].charAt(a-1)=="/"){d=1; b++}
-         if(ins[b].charAt(a-1)=="\\"){d=3; b--}
+         if(ins[n.y].charAt(n.x)=="/"){d=1; n.y++}
+         if(ins[n.y].charAt(n.x)=="\\"){d=3; n.y--}
         }
     }
     
     if(d==3){
-        if(okUP.includes(ins[b-1].charAt(a)=="."){b--})
+        if(okUP.includes(ins[n.y].charAt(n.x)) ){n.y--}
         else{
-         if(ins[b-1].charAt(a)=="/"){d=0; a++}
-         if(ins[b-1].charAt(a)=="\\"){d=2; a--}
+         if(ins[n.y].charAt(n.x)=="/"){d=0; n.x++}
+         if(ins[n.y].charAt(n.x)=="\\"){d=2; n.x--}
             }
     }
+    
     show()
     m++
-    if (m<300){move(d)}
+    if (m<300){move(d,n.x,n.y)}
 }
 
 function show(){    
