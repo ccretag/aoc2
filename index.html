@@ -122,31 +122,43 @@ var ins=[
 "/.........-............./......|................-........-.............|...-..../.....\.\....\................"
 ]
 var dir=0,m=0
+var okRL=[".","-"], okUD=[".","|"]
+    
 display()
 var light={x:0,y:0}
     show()
     move(0)
 function move(d){    
     if(d==0){
-        if(ins[light.y].charAt(light.x+1)=="."){light.x++}
-        if(ins[light.y].charAt(light.x+1)=="/"){d=3; light.y--}
-        if(ins[light.y].charAt(light.x+1)=="\\"){d=1; light.y++}
+        if(okRight.includes(ins[light.y].charAt(light.x+1)==".")){light.x++}
+        else{
+         if(ins[light.y].charAt(light.x+1)=="/"){d=3; light.y--}
+         if(ins[light.y].charAt(light.x+1)=="\\"){d=1; light.y++}
+        }
     }
+    
      if(d==1){
-        if(ins[light.y+1].charAt(light.x)=="."){light.y++}
-        if(ins[light.y+1].charAt(light.x)=="/"){d=2; light.x--}
-        if(ins[light.y+1].charAt(light.x)=="\\"){d=0; light.x++}
-         
+        if(okUP.includes(ins[light.y+1].charAt(light.x)==".")){light.y++}
+        else{
+         if(ins[light.y+1].charAt(light.x)=="/"){d=2; light.x--}
+         if(ins[light.y+1].charAt(light.x)=="\\"){d=0; light.x++}
+        } 
     }
+    
      if(d==2){
-        if(ins[light.y].charAt(light.x-1)=="."){light.x--}
-        if(ins[light.y].charAt(light.x-1)=="/"){d=1; light.y--}
-        if(ins[light.y].charAt(light.x-1)=="\\"){d=3; light.y++}
+        if(okRL.includes(ins[light.y].charAt(light.x-1)==".")){light.x--}
+        else{
+         if(ins[light.y].charAt(light.x-1)=="/"){d=1; light.y--}
+         if(ins[light.y].charAt(light.x-1)=="\\"){d=3; light.y++}
+        }
     }
-     if(d==3){
-        if(ins[light.y-1].charAt(light.x)=="."){light.y--}
-        if(ins[light.y-1].charAt(light.x)=="/"){d=0; light.x++}
-        if(ins[light.y+1].charAt(light.x)=="\\"){d=2; light.x--}
+    
+    if(d==3){
+        if(okUP.includes(ins[light.y-1].charAt(light.x)=="."){light.y--})
+        else{
+         if(ins[light.y-1].charAt(light.x)=="/"){d=0; light.x++}
+         if(ins[light.y+1].charAt(light.x)=="\\"){d=2; light.x--}
+            }
     }
     show()
     m++
