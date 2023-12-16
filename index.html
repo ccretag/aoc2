@@ -25,9 +25,8 @@ var okRL=[".","-"], okUD=[".","|"]
 ct1.font="10px Monospace"
 function start(){
 display()
- alert("lines read "+ins.length)
 var n={x:0,y:0}
-setTimeout(function(){move(0,0,0)},2000)
+setTimeout(function(){move(0,0,0)},1000)
 }
 function move(d1,a1,b1){
     setTimeout(function(){mov2(d1,a1,b1)},5)
@@ -56,8 +55,8 @@ function mov2(d,a,b){
         else{
          if(c=="/"){ move(2,a-1,b); return}
          if(c=="\\"){ move(0,a+1,b); return}
-         if(c=="-"){ move(0,a+1,b);
-                    move(2,a-1,b); return}
+         if(c=="-"){ setTimeout(function(){move(0,a+1,b)},20);
+                    setTimeout(function(){move(2,a-1,b)},20); return}
         } 
     }
     
@@ -66,8 +65,8 @@ function mov2(d,a,b){
         else{
          if(c=="/"){ move(1,a,b+1); return}
          if(c=="\\"){ move(3,a,b-1); return}
-         if(c=="|"){ move(1,a,b+1);
-                     move(3,a,b-1); return}
+         if(c=="|"){ setTimeout(function(){move(1,a,b+1)},20);
+                     setTimeout(function(){move(3,a,b-1)},20); return}
         }
     }
     
@@ -76,8 +75,8 @@ function mov2(d,a,b){
         else{
          if(c=="/"){ move(0,a+1,b); return}
          if(c=="\\"){ move(2,a-1,b); return}
-         if(c=="-"){ move(0,a+1,b);
-                    move(2,a-1,b); return}
+         if(c=="-"){ setTimeout(function(){move(0,a+1,b)},20);
+                    setTimeout(function(){move(2,a-1,b)},20); return}
         }
     }
 
