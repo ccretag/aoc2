@@ -1,6 +1,6 @@
 <html>
 <body>
-    <p>aoc16.8</p>
+    <p>aoc16.1</p>
     <canvas id="Canvas1" width="900" height="900" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -127,57 +127,54 @@ var okRL=[".","-"], okUD=[".","|"]
 display()
 var n={x:0,y:0}
 
-move(0,-1,0)
+move(0,0,0)
 function move(d,a,b){ 
-    if( a<-1 || a>=ins[0].length || b<0 || b>=ins.length){return}
-    if(a>=0  || m==0) {show(a,b)} else{alert("a="+a+"  m="+m);return}
+    if( a<0 || a>=ins[0].length || b<0 || b>=ins.length){return}
     m++
     if (m>300){ if(m%10==1){alert(m)}; return }
+    c=ins[b].charAt(a)
     if(d==0){
-        n.x=a+1,n.y=b
-        if( okRL.includes(ins[n.y].charAt(n.x)) ){ move(0,n.x,n.y); return}
+        if( okRL.includes(c ){ move(0,a+1,b); return}
         else{
-         if(ins[n.y].charAt(n.x)=="/"){ move(3,n.x,n.y); return}
-         if(ins[n.y].charAt(n.x)=="\\"){ move(1,n.x,n.y); return}
-         if(ins[n.y].charAt(n.x)=="|"){ move(1,n.x,n.y);
-                                    move(3,n.x,n.y); return}
+         if(c=="/"){ move(3,a,b-1); return}
+         if(c="\\"){ move(1,a,b+1); return}
+         if(c=="|"){ move(1,a,b+1);
+                     move(3,a,b-1); return}
         }
     }
     
      if(d==1){
-         n.x=a,n.y=b+1
-        if( okUD.includes(ins[n.y].charAt(n.x)) ){ move(1,n.x,n.y); return}
+        
+        if( okUD.includes(c) ){ move(1,a,b+1); return}
         else{
-         if(ins[n.y].charAt(n.x)=="/"){ move(2,n.x,n.y); return}
-         if(ins[n.y].charAt(n.x)=="\\"){ move(0,n.x,n.y); return}
-         if(ins[n.y].charAt(n.x)=="-"){ move(0,n.x,n.y);
-                                        move(2,n.x,n.y); return}
+         if(c=="/"){ move(2,a-1,b); return}
+         if(c=="\\"){ move(0,a+1,b); return}
+         if(c=="-"){ move(0,a+1,b);
+                    move(2,a-1,b); return}
         } 
     }
     
      if(d==2){
-        n.x=a-1,n.y=b
-        if( okRL.includes(ins[n.y].charAt(n.x)) ){ move(2,n.x,n.y); return}
+        if( okRL.includes(c) ){ move(2,a-1,b); return}
         else{
-         if(ins[n.y].charAt(n.x)=="/"){ move(1,n.x,n.y); return}
-         if(ins[n.y].charAt(n.x)=="\\"){ move(3,n.x,n.y); return}
-         if(ins[n.y].charAt(n.x)=="|"){ move(1,n.x,n.y);
-                                        move(3,n.x,n.y); return}
+         if(c=="/"){ move(1,a,b+1); return}
+         if(c=="\\"){ move(3,a,b-1); return}
+         if(c=="|"){ move(1,a,b+1);
+                     move(3,a,b-1); return}
         }
     }
     
     if(d==3){
-        n.x=a,n.y=b-1
-        if( okUD.includes(ins[n.y].charAt(n.x)) ){ move(3,n.x,n.y); return}
+        if( okUD.includes(c) ){ move(3,a,b-1); return}
         else{
-         if(ins[n.y].charAt(n.x)=="/"){ move(0,n.x,n.y); return}
-         if(ins[n.y].charAt(n.x)=="\\"){ move(2,n.x,n.y); return}
-         if(ins[n.y].charAt(n.x)=="-"){ move(0,n.x,n.y);
-                                        move(2,n.x,n.y); return}
+         if(c=="/"){ move(0,a+1,b); return}
+         if(c=="\\"){ move(2,a-1,b); return}
+         if(c)=="-"){ move(0,a+1,b);
+                    move(2,a-1,b); return}
         }
     }
     
-  
+  if (m<5){alert("step "+m)}
 
 }
 
