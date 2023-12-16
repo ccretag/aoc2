@@ -126,7 +126,7 @@ var okRL=[".","-"], okUD=[".","|"]
     
 display()
 var n={x:0,y:0}
-    show()
+    show(n.x,n.y)
     move(0,0,0)
 function move(d,a,b){    
     if(d==0){
@@ -164,13 +164,13 @@ function move(d,a,b){
             }
     }
     
-    show()
+    show(n.x,n.y)
     m++
     if (m<300){move(d,n.x,n.y)}
 }
 
-function show(){    
-ct1.fillText("*",8*light.x,25+8*light.y)
+function show(p,q){    
+ct1.fillText("*",8*p,25+8*q)
 }
   
 function display(){
