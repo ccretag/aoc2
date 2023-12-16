@@ -1,6 +1,6 @@
 <html>
 <body>
-    <h1>aoc16.1</h1>
+    <h1>aoc16.2</h1>
     <canvas id="Canvas1" width="900" height="900" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -127,37 +127,37 @@ var okRL=[".","-"], okUD=[".","|"]
 display()
 var light={x:0,y:0}
     show()
-    move(0)
-function move(d){    
+    move(0,0,0)
+function move(d,a,b){    
     if(d==0){
-        if(okRight.includes(ins[light.y].charAt(light.x+1)==".")){light.x++}
+        if(okRight.includes(ins[b].charAt(a+1)==".")){a++}
         else{
-         if(ins[light.y].charAt(light.x+1)=="/"){d=3; light.y--}
-         if(ins[light.y].charAt(light.x+1)=="\\"){d=1; light.y++}
+         if(ins[b].charAt(a+1)=="/"){d=3; b--}
+         if(ins[light.b].charAt(a+1)=="\\"){d=1; b++}
         }
     }
     
      if(d==1){
-        if(okUP.includes(ins[light.y+1].charAt(light.x)==".")){light.y++}
+        if(okUP.includes(ins[b+1].charAt(a)==".")){b++}
         else{
-         if(ins[light.y+1].charAt(light.x)=="/"){d=2; light.x--}
-         if(ins[light.y+1].charAt(light.x)=="\\"){d=0; light.x++}
+         if(ins[b+1].charAt(a)=="/"){d=2; a--}
+         if(ins[b+1].charAt(a)=="\\"){d=0; a++}
         } 
     }
     
      if(d==2){
-        if(okRL.includes(ins[light.y].charAt(light.x-1)==".")){light.x--}
+        if(okRL.includes(ins[b].charAt(a-1)==".")){a--}
         else{
-         if(ins[light.y].charAt(light.x-1)=="/"){d=1; light.y--}
-         if(ins[light.y].charAt(light.x-1)=="\\"){d=3; light.y++}
+         if(ins[b].charAt(a-1)=="/"){d=1; b++}
+         if(ins[b].charAt(a-1)=="\\"){d=3; b--}
         }
     }
     
     if(d==3){
-        if(okUP.includes(ins[light.y-1].charAt(light.x)=="."){light.y--})
+        if(okUP.includes(ins[b-1].charAt(a)=="."){b--})
         else{
-         if(ins[light.y-1].charAt(light.x)=="/"){d=0; light.x++}
-         if(ins[light.y+1].charAt(light.x)=="\\"){d=2; light.x--}
+         if(ins[b-1].charAt(a)=="/"){d=0; a++}
+         if(ins[b-1].charAt(a)=="\\"){d=2; a--}
             }
     }
     show()
