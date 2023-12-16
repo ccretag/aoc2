@@ -1,6 +1,6 @@
 <html>
 <body>
-    aoc6acdisp
+    aoc6disp
     <canvas id="Canvas1" width="1500" height="1500" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -111,7 +111,7 @@ function display(z){
     for(k=0;k<ins.length;k++){
       if(z==0){grid[k]=ins[k].split(""); disp=insk[k].split("")}
       for(j=0;j<ins[k].length;j++){
-         ct1.fillText(disp[k].[j], 10+sc*j, 15+sc*k)
+         ct1.fillText(disp[k][j], 10+sc*j, 15+sc*k)
       }
     }
     ct1.font="12px Monospace"
