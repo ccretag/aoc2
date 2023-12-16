@@ -18,16 +18,17 @@ var ct1 = c1.getContext("2d");
   }
      
 ins.pop()
-       
+ start()      
     }
 var dir=0,m=0
 var okRL=[".","-"], okUD=[".","|"]
-ct1.font="10px Monospace"    
+ct1.font="10px Monospace"
+function start(){
 display()
  alert("lines read "+ins.length)
 var n={x:0,y:0}
-
 setTimeout(function(){move(0,0,0)},2000)
+}
         
 function move(d,a,b){ 
     m++
