@@ -147,7 +147,7 @@ function move(d,a,b){
         if(okUP.includes(ins[n.y].charAt(n.x)) ){move(1,n.x,n.y);return}
         else{
          if(ins[n.y].charAt(n.x)=="/"){move(2,n.x,n.y); return}
-         if(ins[n.y].charAt(n.x)=="\\"){move(0;n.x,n.y); return}
+         if(ins[n.y].charAt(n.x)=="\\"){move(0,n.x,n.y); return}
          if(ins[n.y].charAt(n,x)=="-"){move(0,n.x,n.y); move(2,n.x,n.y); return}
         } 
     }
