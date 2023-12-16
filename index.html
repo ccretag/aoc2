@@ -131,7 +131,7 @@ var n={x:0,y:0}
 function move(d,a,b){    
     if(d==0){
         n.x=a+1,n.y=b
-        if(okRight.includes(ins[n.y].charAt(n.x)) ){n.x++}
+        if(okRL.includes(ins[n.y].charAt(n.x)) ){n.x++}
         else{
          if(ins[n.y].charAt(n.x)=="/"){d=3; n.y--}
          if(ins[n.y].charAt(n.x)=="\\"){d=1; n.y++}
