@@ -1,6 +1,6 @@
 <html>
 <body>
-    aoc3
+    aoc4
     <canvas id="Canvas1" width="1500" height="1500" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -33,15 +33,15 @@ setInterval(function(){display(1);alert("count= "+coun() )},40000)
 function move(d1,a1,b1,c1){
     setTimeout(function(){mov2(d1,a1,b1,c1)},t)
 }
-function mov2(d,a,b,kc){ 
+function mov2(d,a,b,kc){
+    var ac=0
     m++
-    ac=0
     ct1.clearRect(100,0,200,9)
     ct1.fillText(m+"  k="+kill,100,9)
     if( a<0 || a>=ins[0].length || b<0 || b>=ins.length){return}
     show(d,a,b)
-    if(grid[b][a]!="x"){ac=0}else{ac=kc+1}
-    if(kc>50000){kill++;return}
+    if(grid[b][a]=="x"){ac=kc+1}
+    if(kc>60000){kill++;return}
     grid[b][a]="x"
     //if(m%8000==1000){alert(coun() )}
     ch=ins[b].charAt(a)
