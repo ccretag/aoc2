@@ -1,6 +1,6 @@
 <html>
 <body>
-    <h1>aoc16.7</h1>
+    <h1>aoc16.8</h1>
     <canvas id="Canvas1" width="900" height="900" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -124,7 +124,18 @@ var ins=[
     
 display()
 var light={x:0,y:0}
+    show()
+    setTimeout(move,1000)
+function move(){    
+for(m=0;m<1000;m++){
+    if(ins[light.y].charAt(light.x)=="."){light.x++}
+ show()
+}
+}
+
+function show(){    
 ct1.fillText("*",light.x,25+8*light.y)
+}
   
 function display(){
    ct1.clearRect(0,20,800,800)
