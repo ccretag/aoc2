@@ -1,6 +1,6 @@
 <html>
 <body>
-    aoc1
+    aoc2
     <canvas id="Canvas1" width="1500" height="1500" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -36,12 +36,12 @@ function move(d1,a1,b1,c1){
 function mov2(d,a,b,kc){ 
     m++
     kc++
-    ct1.clearRect(100,0,100,9)
-    ct1.fillText(m,100,9)
+    ct1.clearRect(100,0,200,9)
+    ct1.fillText(m+"  kc="+kill,100,9)
     if( a<0 || a>=ins[0].length || b<0 || b>=ins.length){return}
     show(d,a,b)
     if(grid[b][a]!="x"){kc=0}
-    if(kc>50000){kill++; ct1.fillText(kill,300,9);return}
+    if(kc>50000){kill++;return}
     grid[b][a]="x"
     //if(m%8000==1000){alert(coun() )}
     ch=ins[b].charAt(a)
