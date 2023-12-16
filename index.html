@@ -1,6 +1,6 @@
 <html>
 <body>
-    aoc6
+    aoc8
     <canvas id="Canvas1" width="1500" height="1500" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -44,13 +44,13 @@ function mov2(d,a,b,c){
     if(c>100000){kill++; ct1.fillText(kill,300,9);return}
     grid[b][a]="x"
     //if(m%8000==1000){alert(coun() )}
-    c=ins[b].charAt(a)
+    ch=ins[b].charAt(a)
     if(d==0){
-        if( okRL.includes(c) ){ move(0,a+1,b,c); return}
+        if( okRL.includes(ch) ){ move(0,a+1,b,c); return}
         else{
-         if(c=="/"){ move(3,a,b-1,c); return}
-         if(c=="\\"){ move(1,a,b+1,c); return}
-         if(c=="|"){ setTimeout(function(){move(1,a,b+1,c)},1);
+         if(ch=="/"){ move(3,a,b-1,c); return}
+         if(ch=="\\"){ move(1,a,b+1,c); return}
+         if(ch=="|"){ setTimeout(function(){move(1,a,b+1,c)},1);
                      setTimeout(function(){move(3,a,b-1,c)},1);
                     return}
         }
@@ -58,31 +58,31 @@ function mov2(d,a,b,c){
     
      if(d==1){
         
-        if( okUD.includes(c) ){ move(1,a,b+1,c); return}
+        if( okUD.includes(ch) ){ move(1,a,b+1,c); return}
         else{
-         if(c=="/"){ move(2,a-1,b,c); return}
-         if(c=="\\"){ move(0,a+1,b,c); return}
-         if(c=="-"){ setTimeout(function(){move(0,a+1,b,c)},1);
+         if(ch=="/"){ move(2,a-1,b,c); return}
+         if(ch=="\\"){ move(0,a+1,b,c); return}
+         if(ch=="-"){ setTimeout(function(){move(0,a+1,b,c)},1);
                     setTimeout(function(){move(2,a-1,b,c)},1); return}
         } 
     }
     
      if(d==2){
-        if( okRL.includes(c) ){ move(2,a-1,b,c); return}
+        if( okRL.includes(ch) ){ move(2,a-1,b,c); return}
         else{
-         if(c=="/"){ move(1,a,b+1,c); return}
-         if(c=="\\"){ move(3,a,b-1,c); return}
-         if(c=="|"){ setTimeout(function(){move(1,a,b+1,c)},1);
+         if(ch=="/"){ move(1,a,b+1,c); return}
+         if(ch=="\\"){ move(3,a,b-1,c); return}
+         if(ch=="|"){ setTimeout(function(){move(1,a,b+1,c)},1);
                      setTimeout(function(){move(3,a,b-1,c)},1); return}
         }
     }
     
     if(d==3){
-        if( okUD.includes(c) ){ move(3,a,b-1,c); return}
+        if( okUD.includes(ch) ){ move(3,a,b-1,c); return}
         else{
-         if(c=="/"){ move(0,a+1,b,c); return}
-         if(c=="\\"){ move(2,a-1,b,c); return}
-         if(c=="-"){ setTimeout(function(){move(0,a+1,b,c)},1);
+         if(ch=="/"){ move(0,a+1,b,c); return}
+         if(ch=="\\"){ move(2,a-1,b,c); return}
+         if(ch=="-"){ setTimeout(function(){move(0,a+1,b,c)},1);
                     setTimeout(function(){move(2,a-1,b,c)},1); return}
         }
     }
