@@ -1,6 +1,6 @@
 <html>
 <body>
-    <h1>aoc16.3</h1>
+    <h1>aoc16.4</h1>
     <canvas id="Canvas1" width="900" height="900" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -126,47 +126,53 @@ var okRL=[".","-"], okUD=[".","|"]
     
 display()
 var n={x:0,y:0}
-    show(n.x,n.y)
-    move(0,0,0)
-function move(d,a,b){    
+
+move(0,0,0)
+function move(d,a,b){ 
+    if(a<0 || a>=ins[0].length || b<0 || b>=ins.length){return}
+    show(a,b)
+    if (m>300){alert(m);return}
     if(d==0){
         n.x=a+1,n.y=b
-        if(okRL.includes(ins[n.y].charAt(n.x)) ){n.x++}
+        if(okRL.includes(ins[n.y].charAt(n.x)) ){move(0,n.x,n.y);return}
         else{
-         if(ins[n.y].charAt(n.x)=="/"){d=3; n.y--}
-         if(ins[n.y].charAt(n.x)=="\\"){d=1; n.y++}
+         if(ins[n.y].charAt(n.x)=="/"){move(3,n.x,n.y); return}
+         if(ins[n.y].charAt(n.x)=="\\"){move(1,n.x,n.y); return}
+         if(ins.n.y].charAt(n,x)=="|"){move(1,n.x,n.y); move(3,n.x,n.y);return}
         }
     }
     
      if(d==1){
          n.x=a,n.y=b+1
-        if(okUP.includes(ins[n.y].charAt(n.x)) ){n.y++}
+        if(okUP.includes(ins[n.y].charAt(n.x)) ){move(1,n.x,n.y);return}
         else{
-         if(ins[n.y].charAt(n.x)=="/"){d=2; n.x--}
-         if(ins[n.y].charAt(n.x)=="\\"){d=0; n.x++}
+         if(ins[n.y].charAt(n.x)=="/"){move(2,n.x,n.y); return}
+         if(ins[n.y].charAt(n.x)=="\\"){move(0;n.x,n.y); return}
+         if(ins.n.y].charAt(n,x)=="-"){move(0,n.x,n.y); move(2,n.x,n.y); return}
         } 
     }
     
      if(d==2){
         n.x=a-1,n.y=b
-        if(okRL.includes(ins[n.y].charAt(n.x)) ){n.x--}
+        if(okRL.includes(ins[n.y].charAt(n.x)) ){move(2,n.x,n.y); return)}
         else{
-         if(ins[n.y].charAt(n.x)=="/"){d=1; n.y++}
-         if(ins[n.y].charAt(n.x)=="\\"){d=3; n.y--}
+         if(ins[n.y].charAt(n.x)=="/"){move(1,n.x,n.y); return}
+         if(ins[n.y].charAt(n.x)=="\\"){move(3,n.x,n.y); return}
+         if(ins.n.y].charAt(n,x)=="|"){move(1,n.x,n.y); move(3,n.x,n.y);return}
         }
     }
     
     if(d==3){
-        if(okUP.includes(ins[n.y].charAt(n.x)) ){n.y--}
+        if(okUP.includes(ins[n.y].charAt(n.x)) ){move(3,n.x,n.y); return}
         else{
-         if(ins[n.y].charAt(n.x)=="/"){d=0; n.x++}
-         if(ins[n.y].charAt(n.x)=="\\"){d=2; n.x--}
-            }
+         if(ins[n.y].charAt(n.x)=="/"){move(0,n.x,n.y); return}
+         if(ins[n.y].charAt(n.x)=="\\"){move(2,n.x,n.y); return}
+         if(ins.n.y].charAt(n,x)=="-"){move(0,n.x,n.y); move(2,n.x,n.y); return}
+        }
     }
     
-    show(n.x,n.y)
-    m++
-    if (m<300){move(d,n.x,n.y)}
+  
+
 }
 
 function show(p,q){    
