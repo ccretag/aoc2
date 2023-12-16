@@ -1,6 +1,6 @@
 <html>
 <body>
-    <h1>aoc16.2</h1>
+    <h1>aoc16.3</h1>
     <canvas id="Canvas1" width="900" height="900" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -149,7 +149,7 @@ function move(d,a,b){
         else{
          if(ins[n.y].charAt(n.x)=="/"){ move(2,n.x,n.y); return}
          if(ins[n.y].charAt(n.x)=="\\"){ move(0,n.x,n.y); return}
-         if(ins[n.y].charAt(n,x)=="-"){ move(0,n.x,n.y);
+         if(ins[n.y].charAt(n.x)=="-"){ move(0,n.x,n.y);
                                         move(2,n.x,n.y); return}
         } 
     }
@@ -160,7 +160,7 @@ function move(d,a,b){
         else{
          if(ins[n.y].charAt(n.x)=="/"){ move(1,n.x,n.y); return}
          if(ins[n.y].charAt(n.x)=="\\"){ move(3,n.x,n.y); return}
-         if(ins[n.y].charAt(n,x)=="|"){ move(1,n.x,n.y);
+         if(ins[n.y].charAt(n.x)=="|"){ move(1,n.x,n.y);
                                         move(3,n.x,n.y); return}
         }
     }
@@ -171,7 +171,7 @@ function move(d,a,b){
         else{
          if(ins[n.y].charAt(n.x)=="/"){ move(0,n.x,n.y); return}
          if(ins[n.y].charAt(n.x)=="\\"){ move(2,n.x,n.y); return}
-         if(ins[n.y].charAt(n,x)=="-"){ move(0,n.x,n.y);
+         if(ins[n.y].charAt(n.x)=="-"){ move(0,n.x,n.y);
                                         move(2,n.x,n.y); return}
         }
     }
