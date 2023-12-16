@@ -1,6 +1,6 @@
 <html>
 <body>
-    <h1>aoc16.3</h1>
+    <p>aoc16.3</p>
     <canvas id="Canvas1" width="900" height="900" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -181,14 +181,14 @@ function move(d,a,b){
 }
 
 function show(p,q){    
-ct1.fillText("*",8*p,25+8*q)
+ct1.fillText("*",8*p,15+8*q)
 }
   
 function display(){
    ct1.clearRect(0,20,800,800)
     for(k=0;k<ins.length;k++){
         for(j=0;j<ins[k].length;j++){
-       ct1.fillText(ins[k].charAt(j), 8*j, 25+8*k)
+       ct1.fillText(ins[k].charAt(j), 8*j, 15+8*k)
       }
     }
 }
