@@ -1,6 +1,6 @@
 <html>
 <body>
-    aoc9
+    aoc1
     <canvas id="Canvas1" width="1800" height="1800" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -37,7 +37,7 @@ function mov2(d,a,b){
     ct1.fillText(m,100,9)
     if( a<0 || a>=ins[0].length || b<0 || b>=ins.length){return}
     show(d,a,b)
-    if (m>300){ if(m%1000==1){alert(m)} }
+    if(m%1000==1){alert(m)}
     c=ins[b].charAt(a)
     if(d==0){
         if( okRL.includes(c) ){ move(0,a+1,b); return}
