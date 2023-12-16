@@ -1,6 +1,6 @@
 <html>
 <body>
-    aoc5
+    aoc6
     <canvas id="Canvas1" width="1500" height="1500" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -20,67 +20,70 @@ var ct1 = c1.getContext("2d");
 ins.pop()
  start()      
     }
-var dir=0,m=0,sc=8
+var dir=0,m=0,sc=8,kill=0
 var okRL=[".","-"], okUD=[".","|"]
 var t=1
 function start(){
 display(0)
     t=prompt("Enter time delay")
 var n={x:0,y:0}
-setTimeout(function(){move(0,0,0)},500)
+setTimeout(function(){move(0,0,0,0)},500)
 setInterval(function(){display(1);alert("count= "+coun() )},40000)   
 }
-function move(d1,a1,b1){
-    setTimeout(function(){mov2(d1,a1,b1)},t)
+function move(d1,a1,b1,c1){
+    setTimeout(function(){mov2(d1,a1,b1,c1)},t)
 }
-function mov2(d,a,b){ 
+function mov2(d,a,b,c){ 
     m++
+    c++
     ct1.clearRect(100,0,100,9)
     ct1.fillText(m,100,9)
     if( a<0 || a>=ins[0].length || b<0 || b>=ins.length){return}
     show(d,a,b)
+    if(grid[b][a]!="x"){c=0}
+    if(c>100000){kill++; ct1.fillText(kill,300,9);return}
     grid[b][a]="x"
     //if(m%8000==1000){alert(coun() )}
     c=ins[b].charAt(a)
     if(d==0){
-        if( okRL.includes(c) ){ move(0,a+1,b); return}
+        if( okRL.includes(c) ){ move(0,a+1,b,c); return}
         else{
-         if(c=="/"){ move(3,a,b-1); return}
-         if(c=="\\"){ move(1,a,b+1); return}
-         if(c=="|"){ setTimeout(function(){move(1,a,b+1)},1);
-                     setTimeout(function(){move(3,a,b-1)},1);
+         if(c=="/"){ move(3,a,b-1,c); return}
+         if(c=="\\"){ move(1,a,b+1,c); return}
+         if(c=="|"){ setTimeout(function(){move(1,a,b+1,c)},1);
+                     setTimeout(function(){move(3,a,b-1,c)},1);
                     return}
         }
     }
     
      if(d==1){
         
-        if( okUD.includes(c) ){ move(1,a,b+1); return}
+        if( okUD.includes(c) ){ move(1,a,b+1,c); return}
         else{
-         if(c=="/"){ move(2,a-1,b); return}
-         if(c=="\\"){ move(0,a+1,b); return}
-         if(c=="-"){ setTimeout(function(){move(0,a+1,b)},1);
-                    setTimeout(function(){move(2,a-1,b)},1); return}
+         if(c=="/"){ move(2,a-1,b,c); return}
+         if(c=="\\"){ move(0,a+1,b,c); return}
+         if(c=="-"){ setTimeout(function(){move(0,a+1,b,c)},1);
+                    setTimeout(function(){move(2,a-1,b,c)},1); return}
         } 
     }
     
      if(d==2){
-        if( okRL.includes(c) ){ move(2,a-1,b); return}
+        if( okRL.includes(c) ){ move(2,a-1,b,c); return}
         else{
-         if(c=="/"){ move(1,a,b+1); return}
-         if(c=="\\"){ move(3,a,b-1); return}
-         if(c=="|"){ setTimeout(function(){move(1,a,b+1)},1);
-                     setTimeout(function(){move(3,a,b-1)},1); return}
+         if(c=="/"){ move(1,a,b+1,c); return}
+         if(c=="\\"){ move(3,a,b-1,c); return}
+         if(c=="|"){ setTimeout(function(){move(1,a,b+1,c)},1);
+                     setTimeout(function(){move(3,a,b-1,c)},1); return}
         }
     }
     
     if(d==3){
-        if( okUD.includes(c) ){ move(3,a,b-1); return}
+        if( okUD.includes(c) ){ move(3,a,b-1,c); return}
         else{
-         if(c=="/"){ move(0,a+1,b); return}
-         if(c=="\\"){ move(2,a-1,b); return}
-         if(c=="-"){ setTimeout(function(){move(0,a+1,b)},1);
-                    setTimeout(function(){move(2,a-1,b)},1); return}
+         if(c=="/"){ move(0,a+1,b,c); return}
+         if(c=="\\"){ move(2,a-1,b,c); return}
+         if(c=="-"){ setTimeout(function(){move(0,a+1,b,c)},1);
+                    setTimeout(function(){move(2,a-1,b,c)},1); return}
         }
     }
 
