@@ -1,6 +1,6 @@
 <html>
 <body>
-    aoc7
+    aoc8
     <canvas id="Canvas1" width="1800" height="1800" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -29,8 +29,10 @@ display()
 var n={x:0,y:0}
 setTimeout(function(){move(0,0,0)},2000)
 }
-        
-function move(d,a,b){ 
+function move(d1,a1,b1){
+    setTimeout(function(){mov2(d1,a1,b1)},5)
+}
+function mov2(d,a,b){ 
     m++
     ct1.clearRect(100,0,100,9)
     ct1.fillText(m,100,9)
