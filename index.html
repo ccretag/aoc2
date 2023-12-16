@@ -37,7 +37,7 @@ function mov2(d,a,b){
     ct1.fillText(m,100,9)
     if( a<0 || a>=ins[0].length || b<0 || b>=ins.length){return}
     show(d,a,b)
-    if(m%5000==1000){alert(m)}
+    if(m%5000==1000){display()}
     c=ins[b].charAt(a)
     if(d==0){
         if( okRL.includes(c) ){ move(0,a+1,b); return}
@@ -98,7 +98,7 @@ function display(){
         grid[k]=ins[k]
       for(j=0;j<ins[k].length;j++){
          ct1.fillText(ins[k].charAt(j), 10+sc*j, 15+sc*k)
-        if(grid[k].charAt(j)="x"){count++)
+        if(grid[k].charAt(j)=="x"){count++}
       }
     }
         alert("count="+count);
