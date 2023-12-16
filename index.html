@@ -1,6 +1,6 @@
 <html>
 <body>
-    <p>aoc16.7</p>
+    <p>aoc16.8</p>
     <canvas id="Canvas1" width="900" height="900" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -130,7 +130,7 @@ var n={x:0,y:0}
 move(0,-1,0)
 function move(d,a,b){ 
     if( a<-1 || a>=ins[0].length || b<0 || b>=ins.length){return}
-    if(a>0) {show(a,b)} else{alert("a="+a+"  m="+m);return}
+    if(a>0  || m==0) {show(a,b)} else{alert("a="+a+"  m="+m);return}
     m++
     if (m>300){ if(m%10==1){alert(m)}; return }
     if(d==0){
