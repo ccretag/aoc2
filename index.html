@@ -1,6 +1,6 @@
 <html>
 <body>
-    aoc6d2
+    aoc8
     <canvas id="Canvas1" width="1500" height="1500" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -25,10 +25,12 @@ var okRL=[".","-"], okUD=[".","|"]
 var t=1
 function start(){
 display(0)
-    t=prompt("Enter time delay")
+    as=prompt("start x")
+    bs=prompt("start y")
+    ds=prompt("dir")
 var n={x:0,y:0}
     setInterval(function(){alert(coun() )},30000)
-setTimeout(function(){move(0,0,0,0)},500)   
+setTimeout(function(){move(ds,as,bs,0)},200)   
 }
 function move(d1,a1,b1,c1){
     setTimeout(function(){mov2(d1,a1,b1,c1)},t)
