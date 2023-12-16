@@ -132,7 +132,7 @@ function move(d,a,b){
     m++
     ct1.fillRect(m,100,9)
     if( a<0 || a>=ins[0].length || b<0 || b>=ins.length){return}
-    
+    show(a,b)
     if (m>300){ if(m%10==1){alert(m)}; return }
     c=ins[b].charAt(a)
     if(d==0){
