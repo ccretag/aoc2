@@ -26,7 +26,8 @@ ct1.font="10px Monospace"
 function start(){
 display()
 var n={x:0,y:0}
-setTimeout(function(){move(0,0,0)},1000)
+setTimeout(function(){move(0,0,0)},500)
+setInterval(function(){alert("count= "+coun() )},30000)   
 }
 function move(d1,a1,b1){
     setTimeout(function(){mov2(d1,a1,b1)},2)
@@ -38,7 +39,7 @@ function mov2(d,a,b){
     if( a<0 || a>=ins[0].length || b<0 || b>=ins.length){return}
     show(d,a,b)
     grid[b][a]="x"
-    if(m%8000==1000){alert(coun() )}
+    //if(m%8000==1000){alert(coun() )}
     c=ins[b].charAt(a)
     if(d==0){
         if( okRL.includes(c) ){ move(0,a+1,b); return}
