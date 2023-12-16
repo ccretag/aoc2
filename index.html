@@ -37,15 +37,15 @@ function mov2(d,a,b){
     ct1.fillText(m,100,9)
     if( a<0 || a>=ins[0].length || b<0 || b>=ins.length){return}
     show(d,a,b)
-    if (m>300){ if(m%100==1){alert(m)} }
+    if (m>300){ if(m%1000==1){alert(m)} }
     c=ins[b].charAt(a)
     if(d==0){
         if( okRL.includes(c) ){ move(0,a+1,b); return}
         else{
          if(c=="/"){ move(3,a,b-1); return}
          if(c="\\"){ move(1,a,b+1); return}
-         if(c=="|"){ alert("011Split");setTimeout(function(){move(1,a,b+1)},20);
-                     alert("0Split222");setTimeout(function(){move(3,a,b-1)},20); return}
+         if(c=="|"){ setTimeout(function(){move(1,a,b+1)},20);
+                     setTimeout(function(){move(3,a,b-1)},20); return}
         }
     }
     
@@ -55,8 +55,8 @@ function mov2(d,a,b){
         else{
          if(c=="/"){ move(2,a-1,b); return}
          if(c=="\\"){ move(0,a+1,b); return}
-         if(c=="-"){ alert("1222Split");setTimeout(function(){move(0,a+1,b)},20);
-                    alert("Split122");setTimeout(function(){move(2,a-1,b)},20); return}
+         if(c=="-"){ setTimeout(function(){move(0,a+1,b)},20);
+                    setTimeout(function(){move(2,a-1,b)},20); return}
         } 
     }
     
