@@ -15,8 +15,9 @@ var ct1 = c1.getContext("2d");
   } catch (error) {
     alert('Error reading file:'+error);
   }
-        alert("lines read "+ins.length)
+     alert("lines read "+ins.length)
 ins.pop()
+    }
 var dir=0,m=0
 var okRL=[".","-"], okUD=[".","|"]
 ct1.font="10px Monospace"    
@@ -24,6 +25,7 @@ display()
 var n={x:0,y:0}
 
 setTimeout(function(){move(0,0,0)},2000)
+        
 function move(d,a,b){ 
     m++
      if (m<5){alert("step "+m)}
@@ -74,7 +76,7 @@ function move(d,a,b){
         }
     }
 
-
+    
 }
 
 function show(di,p,q){  
@@ -88,13 +90,11 @@ ct1.fillText("*",10+8*p,15+8*q)
 function display(){
    ct1.clearRect(0,20,800,800)
     for(k=0;k<ins.length;k++){
-        for(j=0;j<ins[k].length;j++){
-       ct1.fillText(ins[k].charAt(j), 10+8*j, 15+8*k)
+      for(j=0;j<ins[k].length;j++){
+         ct1.fillText(ins[k].charAt(j), 10+8*j, 15+8*k)
       }
     }
 }
-
-
  
 </script>
 </body>
