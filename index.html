@@ -1,6 +1,6 @@
 <html>
 <body>
-    aoc
+    aoc1
     <canvas id="Canvas1" width="900" height="900" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -169,7 +169,7 @@ function move(d,a,b){
         else{
          if(c=="/"){ move(0,a+1,b); return}
          if(c=="\\"){ move(2,a-1,b); return}
-         if(c)=="-"){ move(0,a+1,b);
+         if(c=="-"){ move(0,a+1,b);
                     move(2,a-1,b); return}
         }
     }
