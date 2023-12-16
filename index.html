@@ -1,6 +1,6 @@
 <html>
 <body>
-    aoc4
+    aoc5
     <canvas id="Canvas1" width="1500" height="1500" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -41,7 +41,7 @@ function mov2(d,a,b,kc){
     if( a<0 || a>=ins[0].length || b<0 || b>=ins.length){return}
     show(d,a,b)
     if(grid[b][a]=="x"){ac=kc+1}
-    if(kc>60000){kill++;return}
+    if(ac>60000){kill++;return}
     grid[b][a]="x"
     //if(m%8000==1000){alert(coun() )}
     ch=ins[b].charAt(a)
