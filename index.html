@@ -1,11 +1,11 @@
 <html>
 <body>
-    aoc1
+    aoc2
     <canvas id="Canvas1" width="1800" height="1800" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
 var ct1 = c1.getContext("2d");
-    var ins=[]
+    var ins=[], grid=[]
   fileLoad();
     async function fileLoad() {
   try {
@@ -37,7 +37,7 @@ function mov2(d,a,b){
     ct1.fillText(m,100,9)
     if( a<0 || a>=ins[0].length || b<0 || b>=ins.length){return}
     show(d,a,b)
-    if(m%1000==1){alert(m)}
+    if(m%5000==1000){alert(m)}
     c=ins[b].charAt(a)
     if(d==0){
         if( okRL.includes(c) ){ move(0,a+1,b); return}
@@ -92,12 +92,16 @@ ct1.fillText("*",10+sc*p,15+sc*q)
 }
   
 function display(){
+    var count=0
   // ct1.clearRect(0,20,800,800)
     for(k=0;k<ins.length;k++){
+        grid[k]=ins[k]
       for(j=0;j<ins[k].length;j++){
          ct1.fillText(ins[k].charAt(j), 10+sc*j, 15+sc*k)
+        if(grid[k].charAt(j)="x"){count++)
       }
     }
+        alert("count="+count);
 }
  
 </script>
