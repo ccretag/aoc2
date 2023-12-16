@@ -45,8 +45,8 @@ function mov2(d,a,b){
         else{
          if(c=="/"){ move(3,a,b-1); return}
          if(c="\\"){ move(1,a,b+1); return}
-         if(c=="|"){ move(1,a,b+1);
-                     move(3,a,b-1); return}
+         if(c=="|"){ setTimeout(function(){move(1,a,b+1)},20);
+                     setTimeout(function(){move(3,a,b-1)},20); return}
         }
     }
     
