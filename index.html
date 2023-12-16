@@ -1,6 +1,6 @@
 <html>
 <body>
-    aoc4
+    aoc5
     <canvas id="Canvas1" width="900" height="900" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -15,6 +15,7 @@ var ct1 = c1.getContext("2d");
   } catch (error) {
     alert('Error reading file:'+error);
   }
+        alert("lines read "+ins.length)
 ins.pop()
 var dir=0,m=0
 var okRL=[".","-"], okUD=[".","|"]
