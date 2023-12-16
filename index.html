@@ -1,6 +1,6 @@
 <html>
 <body>
-    aoc6
+    aoc7
     <canvas id="Canvas1" width="1500" height="1500" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -20,9 +20,9 @@ var ct1 = c1.getContext("2d");
 ins.pop()
  start()      
     }
-var dir=0,m=0,sc=7
+var dir=0,m=0,sc=8
 var okRL=[".","-"], okUD=[".","|"]
-ct1.font="9px Monospace"
+
 function start(){
 display()
 var n={x:0,y:0}
@@ -30,7 +30,7 @@ setTimeout(function(){move(0,0,0)},500)
 setInterval(function(){alert("count= "+coun() )},30000)   
 }
 function move(d1,a1,b1){
-    setTimeout(function(){mov2(d1,a1,b1)},1)
+    setTimeout(function(){mov2(d1,a1,b1)},30)
 }
 function mov2(d,a,b){ 
     m++
@@ -94,6 +94,7 @@ ct1.fillText("*",10+sc*p,15+sc*q)
 }
   
 function display(){
+    ct1.font="10px Monospace"
   // ct1.clearRect(0,20,800,800)
     for(k=0;k<ins.length;k++){
         grid[k]=ins[k].split("")
@@ -101,7 +102,7 @@ function display(){
          ct1.fillText(ins[k].charAt(j), 10+sc*j, 15+sc*k)
       }
     }
-    ct1.font="10px Monospace"
+    ct1.font="12px Monospace"
 }
 function coun(){
     var co=0
