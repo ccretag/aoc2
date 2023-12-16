@@ -1,6 +1,6 @@
 <html>
 <body>
-    aoc2
+    aoc3
     <canvas id="Canvas1" width="1500" height="1500" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -47,7 +47,7 @@ function mov2(d,a,b){
         else{
          if(c=="/"){ move(3,a,b-1); return}
          if(c="\\"){ move(1,a,b+1); return}
-         if(c=="|"){ setTimeout(function(){move(1,a,b+1)},1);
+         if(c=="|"){ setTimeout(function(){alert("down split");move(1,a,b+1)},1);
                      setTimeout(function(){alert("split up");move(3,a,b-1)},1);
                     return}
         }
