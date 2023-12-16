@@ -1,6 +1,6 @@
 <html>
 <body>
-    <h1>aoc16</h1>
+    <h1>aoc16.1</h1>
     <canvas id="Canvas1" width="900" height="900" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -134,40 +134,44 @@ function move(d,a,b){
     if (m>300){alert(m);return}
     if(d==0){
         n.x=a+1,n.y=b
-        if(okRL.includes(ins[n.y].charAt(n.x)) ){move(0,n.x,n.y);return}
+        if(okRL.includes(ins[n.y].charAt(n.x) ){setTimeout(function(){move(0,n.x,n.y),5);return}
         else{
-         if(ins[n.y].charAt(n.x)=="/"){move(3,n.x,n.y); return}
-         if(ins[n.y].charAt(n.x)=="\\"){move(1,n.x,n.y); return}
-         if(ins[n.y].charAt(n,x)=="|"){move(1,n.x,n.y); move(3,n.x,n.y);return}
+         if(ins[n.y].charAt(n.x)=="/"){setTimeout(function(){move(3,n.x,n.y),5); return}
+         if(ins[n.y].charAt(n.x)=="\\"){setTimeout(function(){move(1,n.x,n.y),5); return}
+         if(ins[n.y].charAt(n,x)=="|"){setTimeout(function(){move(1,n.x,n.y),5);
+                                    setTimeout(function(){move(3,n.x,n.y),5);return}
         }
     }
     
      if(d==1){
          n.x=a,n.y=b+1
-        if(okUP.includes(ins[n.y].charAt(n.x)) ){move(1,n.x,n.y);return}
+        if(okUP.includes(ins[n.y].charAt(n.x) ){setTimeout(function(){move(1,n.x,n.y),5);return}
         else{
-         if(ins[n.y].charAt(n.x)=="/"){move(2,n.x,n.y); return}
-         if(ins[n.y].charAt(n.x)=="\\"){move(0,n.x,n.y); return}
-         if(ins[n.y].charAt(n,x)=="-"){move(0,n.x,n.y); move(2,n.x,n.y); return}
+         if(ins[n.y].charAt(n.x)=="/"){setTimeout(function(){move(2,n.x,n.y),5); return}
+         if(ins[n.y].charAt(n.x)=="\\"){setTimeout(function(){move(0,n.x,n.y),5); return}
+         if(ins[n.y].charAt(n,x)=="-"){setTimeout(function(){move(0,n.x,n.y),5);
+                                        setTimeout(function(){move(2,n.x,n.y),5); return}
         } 
     }
     
      if(d==2){
         n.x=a-1,n.y=b
-        if(okRL.includes(ins[n.y].charAt(n.x)) ){move(2,n.x,n.y); return)}
+        if(okRL.includes(ins[n.y].charAt(n.x) ){setTimeout(function(){move(2,n.x,n.y),5); return)}
         else{
-         if(ins[n.y].charAt(n.x)=="/"){move(1,n.x,n.y); return}
-         if(ins[n.y].charAt(n.x)=="\\"){move(3,n.x,n.y); return}
-         if(ins[n.y].charAt(n,x)=="|"){move(1,n.x,n.y); move(3,n.x,n.y);return}
+         if(ins[n.y].charAt(n.x)=="/"){setTimeout(function(){move(1,n.x,n.y),5); return}
+         if(ins[n.y].charAt(n.x)=="\\"){setTimeout(function(){move(3,n.x,n.y),5); return}
+         if(ins[n.y].charAt(n,x)=="|"){setTimeout(function(){move(1,n.x,n.y),5);
+                                        setTimeout(function(){move(3,n.x,n.y),5);return}
         }
     }
     
     if(d==3){
-        if(okUP.includes(ins[n.y].charAt(n.x)) ){move(3,n.x,n.y); return}
+        if(okUP.includes(ins[n.y].charAt(n.x) ){setTimeout(function(){move(3,n.x,n.y),5); return}
         else{
-         if(ins[n.y].charAt(n.x)=="/"){move(0,n.x,n.y); return}
-         if(ins[n.y].charAt(n.x)=="\\"){move(2,n.x,n.y); return}
-         if(ins[n.y].charAt(n,x)=="-"){move(0,n.x,n.y); move(2,n.x,n.y); return}
+         if(ins[n.y].charAt(n.x)=="/"){setTimeout(function(){move(0,n.x,n.y),5); return}
+         if(ins[n.y].charAt(n.x)=="\\"){setTimeout(function(){move(2,n.x,n.y),5); return}
+         if(ins[n.y].charAt(n,x)=="-"){setTimeout(function(){move(0,n.x,n.y),5);
+                                        setTimeout(function(){move(2,n.x,n.y),5); return}
         }
     }
     
