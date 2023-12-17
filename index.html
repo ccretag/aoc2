@@ -1,11 +1,12 @@
 <html>
 <body>
-    aocount
+    aor
     <canvas id="Canvas1" width="1500" height="1500" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
 var ct1 = c1.getContext("2d");
     var ins=[], grid=[],disp=[]
+    var proc
   fileLoad();
     async function fileLoad() {
   try {
@@ -18,19 +19,16 @@ var ct1 = c1.getContext("2d");
   }
      
 ins.pop()
- start()      
+ start(0,0,0)      
     }
 var dir=0,m=0,sc=8,kill=0
 var okRL=[".","-","h"], okUD=[".","|","v"]
 var oldcount=-2, newcount=0
-function start(){
+function start(sd,sx,sy){
 display(0)
-  var  as=+prompt("start x")
-  var  bs=+prompt("start y")
-  var  ds=+prompt("dir")
     
-    setInterval(function(){newcount=coun();
-                           if(newcount==oldcount){alert(newcount)}
+    proc=setInterval(function(){newcount=coun();
+                           if(newcount==oldcount){alert(newcount);clearInterval(proc); start(0,0,sy+1}
                            else{oldcount=newcount} 
                           },3000)
 setTimeout(function(){move(ds,as,bs,0)},200)   
