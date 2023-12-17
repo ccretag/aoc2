@@ -1,6 +1,6 @@
 <html>
 <body>
-    aoc5
+    aocount
     <canvas id="Canvas1" width="1500" height="1500" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -22,13 +22,17 @@ ins.pop()
     }
 var dir=0,m=0,sc=8,kill=0
 var okRL=[".","-","h"], okUD=[".","|","v"]
-var t=1
+var oldcount=-2, newcount=0
 function start(){
 display(0)
   var  as=+prompt("start x")
   var  bs=+prompt("start y")
   var  ds=+prompt("dir")
-    setInterval(function(){alert(coun() )},30000)
+    
+    setInterval(function(){newcount=coun();
+                           if(newcount==oldcount){alert(newcount)}
+                           else{oldcount=newcount} 
+                          },3000)
 setTimeout(function(){move(ds,as,bs,0)},200)   
 }
 function move(d1,a1,b1,c1){
@@ -38,11 +42,9 @@ function mov2(d,a,b,kc){
     var ac=0
     m++
     ct1.clearRect(100,0,200,9)
-    ct1.fillText(m+"  k="+kill,100,9)
+    ct1.fillText(m,100,9)
     if( a<0 || a>=ins[0].length || b<0 || b>=ins.length){return}
     show(d,a,b)
-    if(grid[b][a]=="x"){ac=kc+1}
-    if(ac>5000){kill++;return}
   
     grid[b][a]="x"
     
