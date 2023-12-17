@@ -1,6 +1,6 @@
 <html>
 <body>
-    aocr2
+    aocr2left
     <canvas id="Canvas1" width="1500" height="1500" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -19,9 +19,9 @@ var ct1 = c1.getContext("2d");
   }
      
 ins.pop()
- start(0,0,0)      
+ start(2,109,0)      
     }
-var dir=0,m=0,sc=8,kill=0
+var dir=0,m=0,sc=8,max=0
 var okRL=[".","-","h"], okUD=[".","|","v"]
 var oldcount, newcount
 function start(sd,sx,sy){
@@ -30,7 +30,10 @@ display(0)
     newcount=0
     
     proc=setInterval(function(){newcount=coun();
-                           if(newcount==oldcount){console.log(sy+" = "+newcount);clearInterval(proc); start(0,0,sy+1)}
+                           if(newcount==oldcount)
+                             {if(newcount>max){max=newcount};
+                              console.log(sy+" = "+newcount+" max="+max);
+                              clearInterval(proc); start(sd,sx,sy+1)}
                            else{oldcount=newcount} 
                           },2000)
 setTimeout(function(){move(sd,sx,sy,0)},10)   
