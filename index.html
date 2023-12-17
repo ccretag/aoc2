@@ -1,6 +1,6 @@
 <html>
 <body>
-    aor
+    aocr
     <canvas id="Canvas1" width="1500" height="1500" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -23,15 +23,17 @@ ins.pop()
     }
 var dir=0,m=0,sc=8,kill=0
 var okRL=[".","-","h"], okUD=[".","|","v"]
-var oldcount=-2, newcount=0
+var oldcount, newcount
 function start(sd,sx,sy){
 display(0)
+    oldcount=-2
+    newcount=0
     
     proc=setInterval(function(){newcount=coun();
                            if(newcount==oldcount){alert(newcount);clearInterval(proc); start(0,0,sy+1}
                            else{oldcount=newcount} 
                           },3000)
-setTimeout(function(){move(ds,as,bs,0)},200)   
+setTimeout(function(){move(sd,sx,bs,sy)},100)   
 }
 function move(d1,a1,b1,c1){
     setTimeout(function(){mov2(d1,a1,b1,c1)},2)
