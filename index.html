@@ -32,8 +32,8 @@ display(0)
     proc=setInterval(function(){newcount=coun();
                            if(newcount==oldcount)
                              {if(newcount>max){max=newcount};
-                              console.log(sy+" = "+newcount+" max="+max);
-                              clearInterval(proc); start(sd,sx,sy-1)}
+                              console.log(sx+" = "+newcount+" max="+max);
+                              clearInterval(proc); start(sd,sx+1,sy)}
                            else{oldcount=newcount} 
                           },2000)
 setTimeout(function(){move(sd,sx,sy,0)},10)   
