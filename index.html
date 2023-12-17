@@ -30,10 +30,10 @@ display(0)
     newcount=0
     
     proc=setInterval(function(){newcount=coun();
-                           if(newcount==oldcount){alert(newcount);clearInterval(proc); start(0,0,sy+1)}
+                           if(newcount==oldcount){console.log(sy+" = "+newcount);clearInterval(proc); start(0,0,sy+1)}
                            else{oldcount=newcount} 
-                          },3000)
-setTimeout(function(){move(sd,sx,sy,0)},100)   
+                          },2000)
+setTimeout(function(){move(sd,sx,sy,0)},10)   
 }
 function move(d1,a1,b1,c1){
     setTimeout(function(){mov2(d1,a1,b1,c1)},2)
